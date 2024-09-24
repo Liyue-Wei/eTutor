@@ -1,15 +1,8 @@
 #include <iostream>
-#include <string>
 using namespace std;
 int main() {
-    int i, n, t;
-    string s[3];
-
-    for (i=0; i<3; i++) {
-        cin >> s[i];
-    }
-
-    for (i=0; i<3; i++) {
-        cout << s[i] << " ";
+    int i[6];
+    for (int n=0; n<6; n++) {
+        cin >> i[n];
     }
 }
