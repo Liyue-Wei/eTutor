@@ -4,7 +4,7 @@
 using namespace std;
 int main() {
     float i;
-    cin.tie(0);
+    cin.tie(nullptr);
     ios::sync_with_stdio(0);
     cin >> i;
     i*=10*i;
