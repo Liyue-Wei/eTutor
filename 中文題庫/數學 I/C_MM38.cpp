@@ -5,9 +5,10 @@ int main() {
     ios::sync_with_stdio(0);
     int i, n, t;
     cin >> i >> n >> t;
-    if (i+n>t && i+t>n && n+t>i) {
+    if(i+n>t && i+t>n && n+t>i) {
         cout << "fit\n";
-    } else {
+    } 
+    else {
         cout << "unfit\n";
     }
 }

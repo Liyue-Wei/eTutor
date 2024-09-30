@@ -1,13 +1,20 @@
 #include <iostream>
+#include <cmath>
+#include <algorithm>
 using namespace std;
 int main() {
-    cin.tie(nullptr);
-    ios::sync_with_stdio(0);
-    int i, n, t;
-    cin >> i >> n >> t;
-    if (i+n>t && i+t>n && n+t>i) {
-        cout << "fit\n";
-    } else {
-        cout << "unfit\n";
+    long long i, n, t;
+    int arr[128];
+    cin >> i;
+    n = sqrt(i);
+    for (t=i; t>0; t--) {
+        // cout << t << endl;
+        for (int l=2; l<=n; l++) {
+            // cout << l << " " << t%l << endl;
+            arr[l-2] = t%l;
+        }
+        int *is_zero = find(arr, arr+n, 0);
+        if(is_zero == arr+n) {cout << t << '\n'; break;}
     }
+    // cout << arr;
 }
