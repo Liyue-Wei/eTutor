@@ -14,19 +14,6 @@ int main() {
 }
 
 /*
-int main() {
-    int i;
-    int n[8192], l[8192];
-    cin >> i;
-    for(int t=0; t!=i; t++) {
-        cin >> n[t];
-        l[t] = f91(n[t]);
-        cout <<  l[t] << '\n';
-    }
-}
-*/
-
-/*
 #include <iostream>
 #include <vector>
 using namespace std;
