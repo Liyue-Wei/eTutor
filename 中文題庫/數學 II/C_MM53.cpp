@@ -29,7 +29,7 @@ int find_num(int i) {
 */
 
 int find_num(int i) {
-    switch (i) {  // 1 4 1 5 9 2 6 5 3 5 8 9 7 9 3 1 1 5
+    switch (i) {  // 1 4 1 5 9 2 6 5 3 5 8 9 7 9 3 2 3 8 4 6
         case 1: return 1; break;
         case 2: return 4; break;
         case 3: return 1; break;
@@ -45,9 +45,9 @@ int find_num(int i) {
         case 13: return 7; break;
         case 14: return 9; break;
         case 15: return 3; break;
-        case 16: return 1; break;
-        case 17: return 1; break;
-        case 18: return 5; break;
+        case 16: return 2; break;
+        case 17: return 3; break;
+        case 18: return 8; break;
     }
 
     return 0;
