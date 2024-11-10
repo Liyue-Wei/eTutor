@@ -1,25 +1,28 @@
 #include <iostream>
 using namespace std;
-int count(int i) {
-    long double t=0;
-    for (int n=1; n<=i/2; n++) {
-        // cout << n << " ";
-        if (i%n==0) {t+=n;}
-    }
-    // cout << endl << t;
-    return(t);
-}
-
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(0);
-    long double i, n;
-    cin >> n >> i;
-    for (n; n<=i; n++) {
-        long double num = count(n);
-        if (num==n && num!=0) {cout << num << " ";}
+    int i, n, x, y;
+    bool flag_1=false;
+    unsigned long long value[]={6, 28, 496, 8128, 33550336, 8589869056, 137438691328, 2305843008139952128};
+    cin >> i >> n;
+    for (int t=0; value[t]!='\0'; t++) {
+        cout << t << endl;
+        // cout << value[t] << ' ';
+        if (i<=value[t] && flag_1==false) {
+            x = t;
+            flag_1 = true;
+        }
+        if (n>=value[t]) {y = t;}
     }
-    cout << '\b' << endl;
+    cout << x << " " << y << endl;
+    if (x==y) {cout << "null\n";}
+    else if (x>y) {cout << value[y] << '\n';}
+    else {
+        for (int l=x; l<=y; l++) {cout << value[l] << " ";}
+        cout << endl;
+    }
 }
 
 /*
