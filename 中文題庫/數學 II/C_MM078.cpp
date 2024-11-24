@@ -3,42 +3,36 @@ using namespace std;
 int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(0);
-    int i, n, x, y;
-    bool flag_1=false;
-    unsigned long long value[]={6, 28, 496, 8128, 33550336, 8589869056, 137438691328, 2305843008139952128};
-    cin >> i >> n;
-    for (int t=0; value[t]!='\0'; t++) {
-        cout << t << endl;
-        // cout << value[t] << ' ';
-        if (i<=value[t] && flag_1==false) {
-            x = t;
-            flag_1 = true;
-        }
-        if (n>=value[t]) {y = t;}
+
+    const unsigned long long value[8]={6, 28, 496, 8128, 33550336, 8589869056, 137438691328, 2305843008139952128};
+    unsigned long long num_1, num_2;
+    int rang_1, rang_2;
+
+    cin >> num_1 >> num_2;
+    for (int i=0; i<8; i++) {
+        if (num_1 <= value[i]) {
+            rang_1 = i;
+            break;
+        } 
     }
-    cout << x << " " << y << endl;
-    if (x==y) {cout << "null\n";}
-    else if (x>y) {cout << value[y] << '\n';}
-    else {
-        for (int l=x; l<=y; l++) {cout << value[l] << " ";}
+
+    for (int i=0; i<8; i++) {
+        if (num_2 >= value[i]) {
+            rang_2 = i;
+        }
+    }
+
+    if (rang_1 > rang_2 && num_1 != value[rang_1]) {
+        cout << "null" << endl;
+    } else if (rang_1 >= rang_2 && num_1 == value[rang_1]) {
+        cout << value[rang_1] << endl;
+    } else {
+        for (int i=rang_1; i<=rang_2; i++) {
+            cout << value[i];
+            if (i != rang_2) {cout << ' ';}
+        }
         cout << endl;
     }
-}
 
-/*
-#include <iostream>
-using namespace std;
-int main() {
-    cin.tie(nullptr);
-    ios::sync_with_stdio(0);
-    int i, n, t, l=0;
-    cin >> i;
-    for (n=0; n<=i; n++) {
-        for (t=1; t<=n; t++) {
-            if (i%t==0) {
-                l+=t;
-            }
-        }
-        cout << l << " ";
-    }
-}*/
+    return 0;
+}
